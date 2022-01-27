@@ -2,6 +2,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { View, Text, StyleSheet } from 'react-native'
 //Packages
+import SplashScreen from 'react-native-splash-screen'
 //Context
 import { DummyProvider } from './src/Context/DummyProvider'
 //Constants
@@ -15,6 +16,10 @@ import { DummyProvider } from './src/Context/DummyProvider'
 import { Buttons, Colors, Containers, Fonts, Icons, Images, Index, Misc, Window } from './src/Styles/Index'
 
 const App = () => {
+	useEffect(() => {
+		SplashScreen.hide()
+	})
+
 	return (
 		<DummyProvider>
 			<View style={styles.appView}>
