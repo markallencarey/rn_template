@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
 		borderWidth: 2,
 		borderRadius: Misc.borderRadius,
 		width: '100%',
-		maxHeight: Window.height * 0.4,
+		maxHeight: Window.height * 0.3,
 		paddingHorizontal: Misc.padding,
 	},
 })
