@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
 	},
 	title: {
 		...Fonts.h1,
-		marginVertical: Misc.margin / 2,
 	},
 	firebaseTest: {
 		...Fonts.h2,
