@@ -9,12 +9,13 @@ const styles = StyleSheet.create({
 		backgroundColor: Colors.white,
 		borderRadius: Misc.borderRadius,
 		...Containers.centered,
+		...Misc.border,
 	},
 	transparent: {
 		padding: Misc.padding,
 		borderRadius: Misc.borderRadius,
 		...Containers.centered,
-		...Misc.borderWhite,
+		...Misc.border,
 	},
 })
 
