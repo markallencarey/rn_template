@@ -24,7 +24,7 @@ const App = () => {
 	return (
 		<DummyProvider>
 			<View style={styles.appView}>
-				<SafeAreaView>
+				<SafeAreaView style={styles.safeAreaView}>
 					<Home />
 				</SafeAreaView>
 			</View>
@@ -37,6 +37,8 @@ export default App
 const styles = StyleSheet.create({
 	appView: {
 		...Containers.appView,
-		justifyContent: 'flex-start',
+	},
+	safeAreaView: {
+		...Containers.safeAreaView,
 	},
 })

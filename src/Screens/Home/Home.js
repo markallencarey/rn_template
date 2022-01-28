@@ -35,7 +35,6 @@ export const Home = () => {
 
 	return (
 		<View style={styles.content}>
-			{/* <View style={styles.mainView}> */}
 			<Text style={styles.title}>RN Template</Text>
 			<Text style={styles.firebaseTest}>Firebase Test:</Text>
 			<Text style={styles.testTxt}>
@@ -58,7 +57,6 @@ export const Home = () => {
 				keyExtractor={item => item.id}
 				style={styles.flatList}
 			/>
-			{/* </View> */}
 		</View>
 	)
 }
@@ -66,12 +64,6 @@ export const Home = () => {
 const styles = StyleSheet.create({
 	content: {
 		...Containers.content,
-	},
-	mainView: {
-		paddingHorizontal: Misc.padding * 2,
-		width: '100%',
-		height: '100%',
-		alignItems: 'center',
 	},
 	title: {
 		...Fonts.h1,
