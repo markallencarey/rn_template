@@ -17,6 +17,12 @@ const styles = StyleSheet.create({
 		paddingHorizontal: Misc.padding * 2,
 		...centered,
 	},
+	safeAreaView: {
+		height: '100%',
+		width: '100%',
+		justifyContent: 'flex-start',
+		alignItems: 'center',
+	},
 	content: {
 		flex: 1,
 		...centered,
@@ -24,4 +30,5 @@ const styles = StyleSheet.create({
 })
 
 export const appView = styles.appView
+export const safeAreaView = styles.safeAreaView
 export const content = styles.content

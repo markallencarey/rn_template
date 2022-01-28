@@ -23,7 +23,7 @@ const App = () => {
 	return (
 		<DummyProvider>
 			<View style={styles.appView}>
-				<SafeAreaView>
+				<SafeAreaView style={styles.safeAreaView}>
 					<Text style={styles.h1}>RN Template</Text>
 				</SafeAreaView>
 			</View>
@@ -36,7 +36,9 @@ export default App
 const styles = StyleSheet.create({
 	appView: {
 		...Containers.appView,
-		justifyContent: 'flex-start',
+	},
+	safeAreaView: {
+		...Containers.safeAreaView,
 	},
 	h1: {
 		...Fonts.h1,
