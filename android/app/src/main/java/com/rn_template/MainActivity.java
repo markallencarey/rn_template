@@ -1,4 +1,4 @@
-package com.rn_template;
+package com.brightbridgeweb.rn_template;
 
 import android.os.Bundle;
 import com.facebook.react.ReactActivity;
