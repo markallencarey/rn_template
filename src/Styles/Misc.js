@@ -1,8 +1,8 @@
 import * as Colors from './Colors'
 import { StyleSheet } from 'react-native'
 
-export const padding = 10
-export const margin = 10
+export const padding = 20
+export const margin = 20
 export const borderRadius = 5
 
 const styles = StyleSheet.create({
