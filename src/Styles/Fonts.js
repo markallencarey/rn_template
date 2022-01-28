@@ -11,18 +11,18 @@ const standardScreenHeight = 680
 
 const styles = StyleSheet.create({
 	h1: {
-		fontSize: RFValue('', standardScreenHeight),
+		fontSize: RFValue(32, standardScreenHeight),
 		// fontFamily: '',
 		color: Colors.black,
 	},
 	h2: {
-		fontSize: RFValue('', standardScreenHeight),
+		fontSize: RFValue(24, standardScreenHeight),
 		// fontFamily: '',
 		color: Colors.black,
 	},
 	body: {
-		fontSize: RFValue('', standardScreenHeight),
-		fontFamily: '',
+		fontSize: RFValue(14, standardScreenHeight),
+		// fontFamily: '',
 		color: Colors.black,
 	},
 })
