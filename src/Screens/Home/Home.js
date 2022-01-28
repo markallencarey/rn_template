@@ -64,6 +64,7 @@ export const Home = () => {
 const styles = StyleSheet.create({
 	content: {
 		...Containers.content,
+		justifyContent: 'flex-start',
 	},
 	title: {
 		...Fonts.h1,
