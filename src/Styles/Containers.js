@@ -1,4 +1,5 @@
 import * as Colors from './Colors'
+import * as Fonts from './Fonts'
 import * as Misc from './Misc'
 import * as Window from './Window'
 import { StyleSheet } from 'react-native'
@@ -29,8 +30,17 @@ const styles = StyleSheet.create({
 		flex: 1,
 		...centered,
 	},
+	textInput: {
+		...Misc.border,
+		borderRadius: Misc.borderRadius,
+		width: '100%',
+		marginVertical: Misc.margin / 2,
+		padding: Misc.margin / 2,
+		...Fonts.body,
+	},
 })
 
 export const appView = styles.appView
 export const safeAreaView = styles.safeAreaView
 export const content = styles.content
+export const textInput = styles.textInput

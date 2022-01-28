@@ -79,13 +79,7 @@ const styles = StyleSheet.create({
 		marginVertical: Misc.margin / 2,
 	},
 	input: {
-		...Misc.border,
-		borderRadius: Misc.borderRadius,
-		width: '100%',
-		marginVertical: Misc.margin / 2,
-		paddingHorizontal: Misc.margin / 4,
-		paddingVertical: Misc.margin / 2,
-		...Fonts.body,
+		...Containers.textInput,
 	},
 	postBtn: {
 		...Buttons.transparent,
