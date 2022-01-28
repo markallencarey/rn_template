@@ -23,7 +23,7 @@ const App = () => {
 	return (
 		<DummyProvider>
 			<View style={styles.appView}>
-				<Text>RN Template</Text>
+				<Text style={styles.h1}>RN Template</Text>
 			</View>
 		</DummyProvider>
 	)
@@ -34,5 +34,8 @@ export default App
 const styles = StyleSheet.create({
 	appView: {
 		...Containers.appView,
+	},
+	h1: {
+		...Fonts.h1,
 	},
 })
