@@ -24,6 +24,8 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 	},
 	content: {
+		height: '100%',
+		width: '100%',
 		flex: 1,
 		...centered,
 	},
