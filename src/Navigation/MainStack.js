@@ -5,19 +5,31 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 //Context
 //Constants
 //Navigation
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
 //Components
 //Screens
+import { Home } from '../Screens/Home/Home'
 //Icons
 //Images
 //Data
 //Styles
 import { Buttons, Colors, Containers, Fonts, Icons, Images, Index, Misc, Window } from '../Styles/Index'
 
-export const Template = () => {
+const Stack = createNativeStackNavigator()
+
+export const MainStack = () => {
+	const headerOptions = {}
+
 	return (
-		<View style={styles.content}>
-			<Text>Template.js</Text>
-		</View>
+		<Stack.Navigator initialRouteName={'Home'}>
+			<Stack.Screen
+				name='Home'
+				component={Home}
+				options={{
+					...headerOptions,
+				}}
+			/>
+		</Stack.Navigator>
 	)
 }
 

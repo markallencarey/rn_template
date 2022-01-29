@@ -5,27 +5,24 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 //Context
 //Constants
 //Navigation
-import { MainStack } from './MainStack'
 //Components
 //Screens
 //Icons
 //Images
+//Data
 //Styles
-import { Buttons, Colors, Containers, Fonts, Images, Index, Misc, Window } from '../Styles/Index'
+import { Buttons, Colors, Containers, Fonts, Icons, Images, Index, Misc, Window } from '../../Styles/Index'
 
-export const Routes = () => {
+export const Home = () => {
 	return (
-		<View style={styles.routesView}>
-			<MainStack />
+		<View style={styles.content}>
+			<Text>Home.js</Text>
 		</View>
 	)
 }
 
 const styles = StyleSheet.create({
-	routesView: {
-		...Containers.routesView,
-	},
-	safeAreaView: {
-		...Containers.safeAreaView,
+	content: {
+		...Containers.content,
 	},
 })
