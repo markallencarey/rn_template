@@ -15,6 +15,7 @@ const styles = StyleSheet.create({
 		width: Window.width,
 		height: Window.height,
 		backgroundColor: Colors.background,
+		paddingHorizontal: Misc.padding * 2,
 		...centered,
 	},
 	safeAreaView: {

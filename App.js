@@ -11,6 +11,7 @@ import { NavigationContainer } from '@react-navigation/native'
 import { Routes } from './src/Navigation/Routes'
 //Components
 //Screens
+import { Home } from './src/Screens/Home/Home'
 //Icons
 //Images
 //Data
