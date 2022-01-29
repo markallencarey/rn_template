@@ -1,12 +1,14 @@
 //React & React Native
 import React, { useContext, useEffect, useState } from 'react'
-import { View, Text, StyleSheet, SafeAreaView } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 //Packages
 import SplashScreen from 'react-native-splash-screen'
 //Context
 import { DummyProvider } from './src/Context/DummyProvider'
 //Constants
 //Navigation
+import { NavigationContainer } from '@react-navigation/native'
+import { Routes } from './src/Navigation/Routes'
 //Components
 //Screens
 //Icons
@@ -21,13 +23,13 @@ const App = () => {
 	})
 
 	return (
-		<DummyProvider>
-			<View style={styles.appView}>
-				<SafeAreaView style={styles.safeAreaView}>
-					<Text style={styles.h1}>RN Template</Text>
-				</SafeAreaView>
-			</View>
-		</DummyProvider>
+		<NavigationContainer>
+			<DummyProvider>
+				<View style={styles.appView}>
+					<Routes />
+				</View>
+			</DummyProvider>
+		</NavigationContainer>
 	)
 }
 
@@ -36,9 +38,6 @@ export default App
 const styles = StyleSheet.create({
 	appView: {
 		...Containers.appView,
-	},
-	safeAreaView: {
-		...Containers.safeAreaView,
 	},
 	h1: {
 		...Fonts.h1,

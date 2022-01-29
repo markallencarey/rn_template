@@ -1,6 +1,6 @@
 //React & React Native
 import React, { useContext, useEffect, useState } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 //Packages
 //Context
 //Constants

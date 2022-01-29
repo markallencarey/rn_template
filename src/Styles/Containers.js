@@ -15,7 +15,6 @@ const styles = StyleSheet.create({
 		width: Window.width,
 		height: Window.height,
 		backgroundColor: Colors.background,
-		paddingHorizontal: Misc.padding * 2,
 		...centered,
 	},
 	safeAreaView: {
@@ -24,11 +23,18 @@ const styles = StyleSheet.create({
 		justifyContent: 'flex-start',
 		alignItems: 'center',
 	},
+	routesView: {
+		width: '100%',
+		height: '100%',
+		backgroundColor: Colors.background,
+	},
 	content: {
 		height: '100%',
 		width: '100%',
 		flex: 1,
-		...centered,
+		paddingHorizontal: Misc.padding * 2,
+		paddingVertical: Misc.padding,
+		alignItems: 'center',
 	},
 	textInput: {
 		...Misc.border,
@@ -42,5 +48,6 @@ const styles = StyleSheet.create({
 
 export const appView = styles.appView
 export const safeAreaView = styles.safeAreaView
+export const routesView = styles.routesView
 export const content = styles.content
 export const textInput = styles.textInput
