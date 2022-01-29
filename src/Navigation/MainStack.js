@@ -9,6 +9,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 //Components
 //Screens
 import { Home } from '../Screens/Home/Home'
+import { Screen1 } from '../Screens/Home/Screen1'
+import { Screen2 } from '../Screens/Home/Screen2'
 //Icons
 //Images
 //Data
@@ -25,6 +27,20 @@ export const MainStack = () => {
 			<Stack.Screen
 				name='Home'
 				component={Home}
+				options={{
+					...headerOptions,
+				}}
+			/>
+			<Stack.Screen
+				name='Screen1'
+				component={Screen1}
+				options={{
+					...headerOptions,
+				}}
+			/>
+			<Stack.Screen
+				name='Screen2'
+				component={Screen2}
 				options={{
 					...headerOptions,
 				}}

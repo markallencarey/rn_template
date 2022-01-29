@@ -20,6 +20,11 @@ const styles = StyleSheet.create({
 		// fontFamily: '',
 		color: Colors.black,
 	},
+	h3: {
+		fontSize: RFValue(18, standardScreenHeight),
+		// fontFamily: '',
+		color: Colors.black,
+	},
 	body: {
 		fontSize: RFValue(14, standardScreenHeight),
 		// fontFamily: '',
@@ -29,4 +34,5 @@ const styles = StyleSheet.create({
 
 export const h1 = styles.h1
 export const h2 = styles.h2
+export const h3 = styles.h3
 export const body = styles.body
