@@ -7,6 +7,7 @@ import SplashScreen from 'react-native-splash-screen'
 import { DummyProvider } from './src/Context/DummyProvider'
 //Constants
 //Navigation
+import { NavigationContainer } from '@react-navigation/native'
 //Components
 //Screens
 //Icons
@@ -21,13 +22,15 @@ const App = () => {
 	})
 
 	return (
-		<DummyProvider>
-			<View style={styles.appView}>
-				<SafeAreaView style={styles.safeAreaView}>
-					<Text style={styles.h1}>RN Template</Text>
-				</SafeAreaView>
-			</View>
-		</DummyProvider>
+		<NavigationContainer>
+			<DummyProvider>
+				<View style={styles.appView}>
+					<SafeAreaView style={styles.safeAreaView}>
+						<Text style={styles.h1}>RN Template</Text>
+					</SafeAreaView>
+				</View>
+			</DummyProvider>
+		</NavigationContainer>
 	)
 }
 
