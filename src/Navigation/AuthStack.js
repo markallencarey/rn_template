@@ -9,6 +9,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 //Components
 //Screens
 import { LogIn } from '../Screens/Auth/LogIn'
+import { Register } from '../Screens/Auth/Register'
 //Icons
 //Images
 //Data
@@ -26,17 +27,18 @@ export const AuthStack = () => {
 				name='LogIn'
 				component={LogIn}
 				options={{
-					...headerOptions,
-				}}
-			/>
-			{/* <Stack.Screen
-				name='Screen1'
-				component={Screen1}
-				options={{
+					title: 'Log In',
 					...headerOptions,
 				}}
 			/>
 			<Stack.Screen
+				name='Register'
+				component={Register}
+				options={{
+					...headerOptions,
+				}}
+			/>
+			{/* <Stack.Screen
 				name='Screen2'
 				component={Screen2}
 				options={{

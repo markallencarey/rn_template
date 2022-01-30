@@ -18,7 +18,7 @@ import { Buttons, Colors, Containers, Fonts, Images, Index, Misc, Window } from 
 export const Routes = () => {
 	const { user } = useContext(AuthContext)
 
-	return <View style={styles.routesView}>{user ? <AuthStack /> : <MainStack />}</View>
+	return <View style={styles.routesView}>{user ? <MainStack /> : <AuthStack />}</View>
 }
 
 const styles = StyleSheet.create({

@@ -31,7 +31,6 @@ const styles = StyleSheet.create({
 	content: {
 		height: '100%',
 		width: '100%',
-		flex: 1,
 		paddingHorizontal: Misc.padding * 2,
 		paddingVertical: Misc.padding,
 		alignItems: 'center',

@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 //Packages
 import SplashScreen from 'react-native-splash-screen'
 //Context
+import { AuthProvider } from './src/Context/AuthProvider'
 import { DummyProvider } from './src/Context/DummyProvider'
 //Constants
 //Navigation
@@ -25,11 +26,13 @@ const App = () => {
 
 	return (
 		<NavigationContainer>
-			<DummyProvider>
-				<View style={styles.appView}>
-					<Routes />
-				</View>
-			</DummyProvider>
+			<AuthProvider>
+				<DummyProvider>
+					<View style={styles.appView}>
+						<Routes />
+					</View>
+				</DummyProvider>
+			</AuthProvider>
 		</NavigationContainer>
 	)
 }

@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, FlatList, ScrollView } from 'react-native'
 //Packages
 //Context
+import { AuthContext } from '../../Context/AuthProvider'
 //Constants
 import { firestore, timestamp } from '../../Constants/Firebase'
 //Navigation
@@ -15,6 +16,7 @@ import { firestore, timestamp } from '../../Constants/Firebase'
 import { Buttons, Colors, Containers, Fonts, Icons, Images, Index, Misc, Window } from '../../Styles/Index'
 
 export const Home = ({ navigation }) => {
+	const { signOut } = useContext(AuthContext)
 	const [textPosts, setTextPosts] = useState([])
 	const [textInput, setTextInput] = useState('')
 
@@ -78,7 +80,7 @@ export const Home = ({ navigation }) => {
 						onSubmitEditing={testPost}
 					/>
 					<TouchableOpacity onPress={testPost} style={styles.postBtn}>
-						<Text>Post</Text>
+						<Text style={styles.h3}>Post</Text>
 					</TouchableOpacity>
 					<FlatList
 						data={textPosts}
@@ -87,6 +89,9 @@ export const Home = ({ navigation }) => {
 						style={styles.flatList}
 					/>
 				</View>
+				<TouchableOpacity onPress={signOut} style={styles.postBtn}>
+					<Text style={styles.h3}>Sign Out</Text>
+				</TouchableOpacity>
 			</ScrollView>
 		</View>
 	)
@@ -100,9 +105,13 @@ const styles = StyleSheet.create({
 	scrollView: {
 		paddingHorizontal: Misc.padding * 2,
 		alignItems: 'center',
+		paddingBottom: Misc.margin * 2,
 	},
 	h2: {
 		...Fonts.h2,
+	},
+	h3: {
+		...Fonts.h3,
 	},
 	body: {
 		...Fonts.body,
@@ -139,8 +148,7 @@ const styles = StyleSheet.create({
 		padding: Misc.padding / 2,
 	},
 	flatList: {
-		marginTop: Misc.margin / 2,
-		marginBottom: Misc.margin * 2,
+		marginVertical: Misc.margin / 2,
 		borderColor: Colors.surface,
 		borderWidth: 2,
 		borderRadius: Misc.borderRadius,

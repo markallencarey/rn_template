@@ -1,6 +1,6 @@
 //React & React Native
 import React, { useContext, useEffect, useState } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity, TextInput } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, TextInput, ScrollView } from 'react-native'
 //Packages
 //Context
 import { AuthContext } from '../../Context/AuthProvider'
@@ -14,14 +14,16 @@ import { AuthContext } from '../../Context/AuthProvider'
 //Styles
 import { Buttons, Colors, Containers, Fonts, Icons, Images, Index, Misc, Window } from '../../Styles/Index'
 
-export const LogIn = ({ navigation }) => {
-	const { login } = useContext(AuthContext)
+export const Register = ({ navigation }) => {
+	const { register } = useContext(AuthContext)
 	const [email, setEmail] = useState()
 	const [password, setPassword] = useState()
+	const [name, setName] = useState()
+	const [phone, setPhone] = useState()
 
 	return (
-		<View style={styles.content}>
-			<Text style={styles.h2}>LogIn.js</Text>
+		<ScrollView contentContainerStyle={styles.content}>
+			<Text style={styles.h2}>Register.js</Text>
 			<View style={styles.inputView}>
 				<TextInput
 					style={styles.input}
@@ -31,15 +33,19 @@ export const LogIn = ({ navigation }) => {
 					keyboardType='email-address'
 				/>
 				<TextInput style={styles.input} placeholder='Password' onChangeText={input => setPassword(input)} secureTextEntry={true} />
-				<TouchableOpacity style={styles.btn} onPress={() => login(email, password)}>
-					<Text style={styles.h3}>Log In</Text>
-				</TouchableOpacity>
-				<Text style={styles.h3}>Are you new?</Text>
-				<TouchableOpacity style={styles.btn} onPress={() => navigation.navigate('Register')}>
+				<TextInput style={styles.input} placeholder='Name' onChangeText={input => setName(input)} />
+				<TextInput
+					style={styles.input}
+					placeholder='Phone Number'
+					onChangeText={input => setPhone(input)}
+					keyboardType='phone-pad'
+					autoComplete='tel'
+				/>
+				<TouchableOpacity style={styles.btn} onPress={() => register(email, password, name, phone)}>
 					<Text style={styles.h3}>Register</Text>
 				</TouchableOpacity>
 			</View>
-		</View>
+		</ScrollView>
 	)
 }
 
@@ -54,7 +60,7 @@ const styles = StyleSheet.create({
 		...Fonts.h3,
 	},
 	inputView: {
-		marginTop: Misc.margin * 3,
+		marginTop: Misc.margin * 2,
 		width: '100%',
 		alignItems: 'center',
 	},
