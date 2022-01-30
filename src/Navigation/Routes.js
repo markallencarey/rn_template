@@ -4,8 +4,10 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 //Packages
 //Context
 //Constants
+import { AuthContext } from '../Context/AuthProvider'
 //Navigation
 import { MainStack } from './MainStack'
+import { AuthStack } from './AuthStack'
 //Components
 //Screens
 //Icons
@@ -14,11 +16,9 @@ import { MainStack } from './MainStack'
 import { Buttons, Colors, Containers, Fonts, Images, Index, Misc, Window } from '../Styles/Index'
 
 export const Routes = () => {
-	return (
-		<View style={styles.routesView}>
-			<MainStack />
-		</View>
-	)
+	const { user } = useContext(AuthContext)
+
+	return <View style={styles.routesView}>{user ? <AuthStack /> : <MainStack />}</View>
 }
 
 const styles = StyleSheet.create({
