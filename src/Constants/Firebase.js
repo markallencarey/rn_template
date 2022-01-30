@@ -5,10 +5,10 @@ import storage from '@react-native-firebase/storage'
 
 //Replace the info below with the API_KEY and firebaseConfig from your project
 
-const FIREBASE_API_KEY = 'AIzaSyBwccyu1jQuJ2HBLjmtHVFB-yBQbL-in3A'
+const FIREBASE_API_KEY = 'AIzaSyA9LBQJQv53VuuMbZ-XN3EJHHYd-NONDpk'
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyA9LBQJQv53VuuMbZ-XN3EJHHYd-NONDpk',
+	apiKey: FIREBASE_API_KEY,
 	authDomain: 'rn-template-2bf99.firebaseapp.com',
 	projectId: 'rn-template-2bf99',
 	storageBucket: 'rn-template-2bf99.appspot.com',
