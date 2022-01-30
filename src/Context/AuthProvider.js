@@ -18,7 +18,6 @@ export const AuthContext = createContext({})
 
 export const AuthProvider = ({ children }) => {
 	const [user, setUser] = useState(null)
-	console.log('file: AuthProvider.js -> line 21 -> AuthProvider -> user', user)
 	const [userData, setUserData] = useState(null)
 
 	useEffect(() => {
@@ -30,6 +29,18 @@ export const AuthProvider = ({ children }) => {
 				setUser(null)
 			}
 		})
+	}, [user])
+
+	useEffect(() => {
+		firestore()
+			.collection('Users')
+			.doc(user?.uid)
+			.get()
+			.then(documentSnapshot => {
+				if (documentSnapshot.exists) {
+					setUserData(documentSnapshot.data())
+				}
+			})
 	}, [user])
 
 	const login = async (email, password) => {
@@ -63,7 +74,7 @@ export const AuthProvider = ({ children }) => {
 			.createUserWithEmailAndPassword(email, password)
 			.then(user => {
 				console.log('User account created & signed in!')
-				firestore().collection('Users').doc(user.uid).set({
+				firestore().collection('Users').doc(user.user.uid).set({
 					name: name,
 					email: email,
 					phone: phone,
@@ -83,8 +94,6 @@ export const AuthProvider = ({ children }) => {
 				if (err.code === 'auth/weak-password') {
 					alert('The given password is invalid. Password should be at least 6 characters.')
 				}
-
-				// console.error(error)
 			})
 	}
 
@@ -98,7 +107,7 @@ export const AuthProvider = ({ children }) => {
 		<AuthContext.Provider
 			value={{
 				user,
-				setUser,
+				userData,
 				login,
 				register,
 				signOut,
