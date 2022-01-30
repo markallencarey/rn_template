@@ -16,7 +16,7 @@ import { firestore, timestamp } from '../../Constants/Firebase'
 import { Buttons, Colors, Containers, Fonts, Icons, Images, Index, Misc, Window } from '../../Styles/Index'
 
 export const Home = ({ navigation }) => {
-	const { signOut } = useContext(AuthContext)
+	const { signOut, userData } = useContext(AuthContext)
 	const [textPosts, setTextPosts] = useState([])
 	const [textInput, setTextInput] = useState('')
 
@@ -52,10 +52,18 @@ export const Home = ({ navigation }) => {
 		navigation.navigate('Screen2')
 	}
 
+	console.log(new Date(userData?.dateCreated.toDate()).toDateString())
+
 	return (
 		<View style={styles.content}>
 			<ScrollView contentContainerStyle={styles.scrollView}>
 				<Text style={styles.h2}>Home.js</Text>
+				<View style={styles.userRow}>
+					<Text style={styles.h3}>Welcome, {userData?.name}!</Text>
+					<Text style={styles.body}>Email: {userData?.email}</Text>
+					<Text style={styles.body}>Phone: {userData?.phone}</Text>
+					<Text style={styles.body}>Date joined: {new Date(userData?.dateCreated.toDate()).toDateString()}</Text>
+				</View>
 				<View style={styles.navRow}>
 					<TouchableOpacity style={styles.navBtn} onPress={goToScreen1}>
 						<Text style={styles.body}>Go to</Text>
@@ -115,6 +123,10 @@ const styles = StyleSheet.create({
 	},
 	body: {
 		...Fonts.body,
+	},
+	userRow: {
+		marginTop: Misc.margin,
+		alignItems: 'center',
 	},
 	navRow: {
 		flexDirection: 'row',
