@@ -5,7 +5,6 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 //Context
 //Constants
 //Navigation
-// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 //Components
 //Screens
 import { Screen1 } from '../../Screens/Home/Screen1'
@@ -15,8 +14,6 @@ import { Screen2 } from '../../Screens/Home/Screen2'
 //Data
 //Styles
 import { Buttons, Colors, Containers, Fonts, Icons, Images, Index, Misc, Window } from '../../Styles/Index'
-
-const Tab = createBottomTabNavigator()
 
 export const Home = ({ navigation }) => {
 	const goToScreen1 = () => {
@@ -40,11 +37,6 @@ export const Home = ({ navigation }) => {
 					<Text style={styles.body}>Screen2</Text>
 				</TouchableOpacity>
 			</View>
-			<Tab.Navigator>
-				<Tab.Screen name='Home' component={Home} />
-				<Tab.Screen name='Screen 1' component={Screen1} />
-				<Tab.Screen name='Screen 2' component={Screen2} />
-			</Tab.Navigator>
 		</View>
 	)
 }
