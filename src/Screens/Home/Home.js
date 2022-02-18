@@ -9,6 +9,8 @@ import { firestore, timestamp } from '../../Constants/Firebase'
 //Navigation
 //Components
 //Screens
+import { Screen1 } from '../../Screens/Home/Screen1'
+import { Screen2 } from '../../Screens/Home/Screen2'
 //Icons
 //Images
 //Data

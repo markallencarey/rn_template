@@ -23,7 +23,7 @@ const App = () => {
 		SplashScreen.hide()
 	})
 
-	LogBox.ignoreAllLogs(true)
+	LogBox.ignoreAllLogs()
 
 	return (
 		<NavigationContainer>
