@@ -16,7 +16,7 @@ import { firestore, timestamp } from '../../Constants/Firebase'
 import { Buttons, Colors, Containers, Fonts, Icons, Images, Index, Misc, Window } from '../../Styles/Index'
 
 export const Home = ({ navigation }) => {
-	const { signOut, userData } = useContext(AuthContext)
+	const { signOut, userData, deleteUser } = useContext(AuthContext)
 	const [textPosts, setTextPosts] = useState([])
 	const [textInput, setTextInput] = useState('')
 
@@ -52,7 +52,7 @@ export const Home = ({ navigation }) => {
 		navigation.navigate('Screen2')
 	}
 
-	console.log(new Date(userData?.dateCreated.toDate()).toDateString())
+	console.log(new Date(userData?.dateCreated?.toDate()).toDateString())
 
 	return (
 		<View style={styles.content}>
@@ -63,6 +63,9 @@ export const Home = ({ navigation }) => {
 					<Text style={styles.body}>Email: {userData?.email}</Text>
 					<Text style={styles.body}>Phone: {userData?.phone}</Text>
 					<Text style={styles.body}>Date joined: {new Date(userData?.dateCreated.toDate()).toDateString()}</Text>
+					<TouchableOpacity style={styles.delBtn} onPress={deleteUser}>
+						<Text style={styles.delBtnTxt}>Delete User</Text>
+					</TouchableOpacity>
 				</View>
 				<View style={styles.navRow}>
 					<TouchableOpacity style={styles.navBtn} onPress={goToScreen1}>
@@ -124,6 +127,10 @@ const styles = StyleSheet.create({
 	body: {
 		...Fonts.body,
 	},
+	delBtnTxt: {
+		...Fonts.body,
+		color: Colors.error,
+	},
 	userRow: {
 		marginTop: Misc.margin,
 		alignItems: 'center',
@@ -136,6 +143,13 @@ const styles = StyleSheet.create({
 		...Buttons.transparent,
 		marginHorizontal: Misc.margin,
 		justifyContent: 'flex-start',
+	},
+	delBtn: {
+		...Buttons.transparent,
+		marginHorizontal: Misc.margin,
+		justifyContent: 'flex-start',
+		marginTop: Misc.margin,
+		borderColor: Colors.error,
 	},
 	firebase: {
 		width: '100%',

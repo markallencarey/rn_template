@@ -29,6 +29,7 @@ export const LogIn = ({ navigation }) => {
 					onChangeText={input => setEmail(input)}
 					autoComplete='email'
 					keyboardType='email-address'
+					autoCapitalize='none'
 				/>
 				<TextInput style={styles.input} placeholder='Password' onChangeText={input => setPassword(input)} secureTextEntry={true} />
 				<TouchableOpacity style={styles.btn} onPress={() => login(email, password)}>

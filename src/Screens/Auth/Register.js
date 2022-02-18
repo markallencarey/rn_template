@@ -31,6 +31,7 @@ export const Register = ({ navigation }) => {
 					onChangeText={input => setEmail(input)}
 					autoComplete='email'
 					keyboardType='email-address'
+					autoCapitalize='none'
 				/>
 				<TextInput style={styles.input} placeholder='Password' onChangeText={input => setPassword(input)} secureTextEntry={true} />
 				<TextInput style={styles.input} placeholder='Name' onChangeText={input => setName(input)} />

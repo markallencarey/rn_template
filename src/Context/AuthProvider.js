@@ -1,6 +1,6 @@
 //React & React Native
 import React, { useContext, useEffect, useState, createContext } from 'react'
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet, Alert } from 'react-native'
 //Packages
 //Context
 //Constants
@@ -103,6 +103,51 @@ export const AuthProvider = ({ children }) => {
 			.then(() => console.log('User signed out!'))
 	}
 
+	const deleteUserFromFirestore = async () => {
+		await firestore()
+			.collection('Users')
+			.doc(user?.uid)
+			.delete()
+			.then(() => {
+				console.log('user deleted from firestore')
+				setUserData(null)
+			})
+	}
+
+	const deleteUserFromFirebaseAuth = async () => {
+		const thisUser = auth().currentUser
+		await thisUser.delete().then(() => {
+			console.log('user deleted from firebase auth')
+			setUser(null)
+		})
+	}
+
+	const deleteUser = () => {
+		Alert.alert(
+			'Delete Account',
+			`Are you sure that you would like to delete your account?`,
+			[
+				{
+					text: 'Cancel',
+					style: 'cancel',
+				},
+				{
+					text: 'Delete',
+					onPress: () => {
+						deleteUserFromFirebaseAuth().then(() => {
+							deleteUserFromFirestore().then(() => {
+								Alert.alert('Your account has been deleted. We hope you come back soon!')
+							})
+						})
+					},
+				},
+			],
+			{
+				cancelable: true,
+			}
+		)
+	}
+
 	return (
 		<AuthContext.Provider
 			value={{
@@ -111,6 +156,7 @@ export const AuthProvider = ({ children }) => {
 				login,
 				register,
 				signOut,
+				deleteUser,
 			}}
 		>
 			{children}
