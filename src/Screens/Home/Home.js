@@ -5,7 +5,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 //Context
 //Constants
 //Navigation
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+// import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 //Components
 //Screens
 import { Screen1 } from '../../Screens/Home/Screen1'
