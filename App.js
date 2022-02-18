@@ -1,6 +1,6 @@
 //React & React Native
 import React, { useContext, useEffect, useState } from 'react'
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text, StyleSheet, TouchableOpacity, LogBox } from 'react-native'
 //Packages
 import SplashScreen from 'react-native-splash-screen'
 //Context
@@ -22,6 +22,8 @@ const App = () => {
 	useEffect(() => {
 		SplashScreen.hide()
 	})
+
+	LogBox.ignoreAllLogs()
 
 	return (
 		<NavigationContainer>
