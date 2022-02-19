@@ -5,47 +5,53 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 //Context
 //Constants
 //Navigation
-import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 //Components
 //Screens
 import { Home } from '../Screens/Home/Home'
 import { Screen1 } from '../Screens/Home/Screen1'
 import { Screen2 } from '../Screens/Home/Screen2'
 //Icons
+import HomeIcon from '../Assets/Icons/TabNav/Home.svg'
+import Screen1Icon from '../Assets/Icons/TabNav/Screen1.svg'
+import Screen2Icon from '../Assets/Icons/TabNav/Screen2.svg'
 //Images
 //Data
 //Styles
 import { Buttons, Colors, Containers, Fonts, Icons, Images, Index, Misc, Window } from '../Styles/Index'
 
-const Stack = createNativeStackNavigator()
+const Tab = createBottomTabNavigator()
 
-export const MainStack = () => {
-	const headerOptions = {}
-
+export const TabNav = () => {
 	return (
-		<Stack.Navigator initialRouteName={'Home'}>
-			<Stack.Screen
+		<Tab.Navigator
+			initialRouteName='Screen1'
+			screenOptions={{
+				style: styles.content,
+			}}
+		>
+			<Tab.Screen
 				name='Home'
 				component={Home}
 				options={{
-					...headerOptions,
+					tabBarIcon: () => <HomeIcon />,
 				}}
 			/>
-			<Stack.Screen
+			<Tab.Screen
 				name='Screen1'
 				component={Screen1}
 				options={{
-					...headerOptions,
+					tabBarIcon: () => <Screen1Icon />,
 				}}
 			/>
-			<Stack.Screen
+			<Tab.Screen
 				name='Screen2'
 				component={Screen2}
 				options={{
-					...headerOptions,
+					tabBarIcon: () => <Screen2Icon />,
 				}}
 			/>
-		</Stack.Navigator>
+		</Tab.Navigator>
 	)
 }
 

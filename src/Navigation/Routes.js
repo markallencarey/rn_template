@@ -5,7 +5,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 //Context
 //Constants
 //Navigation
-import { MainStack } from './MainStack'
+import { TabNav } from './TabNav'
 //Components
 //Screens
 //Icons
@@ -16,7 +16,7 @@ import { Buttons, Colors, Containers, Fonts, Images, Index, Misc, Window } from 
 export const Routes = () => {
 	return (
 		<View style={styles.routesView}>
-			<MainStack />
+			<TabNav />
 		</View>
 	)
 }

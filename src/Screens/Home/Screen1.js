@@ -15,7 +15,6 @@ import { Buttons, Colors, Containers, Fonts, Icons, Images, Index, Misc, Window 
 
 export const Screen1 = () => {
 	const [pressed, setPressed] = useState(false)
-	const [bgColor, setBgColor] = useState(Colors.white)
 
 	const changeBg = () => {
 		setPressed(!pressed)
@@ -35,7 +34,7 @@ export const Screen1 = () => {
 const styles = StyleSheet.create({
 	content: pressed => ({
 		...Containers.content,
-		backgroundColor: pressed ? Colors.black : Colors.white,
+		backgroundColor: pressed ? Colors.black : Colors.background,
 	}),
 	h2: pressed => ({
 		...Fonts.h2,
