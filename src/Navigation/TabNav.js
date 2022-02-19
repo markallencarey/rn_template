@@ -6,6 +6,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native'
 //Constants
 //Navigation
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { useIsFocused } from '@react-navigation/native'
 //Components
 //Screens
 import { Home } from '../Screens/Home/Home'
@@ -23,6 +24,8 @@ import { Buttons, Colors, Containers, Fonts, Icons, Images, Index, Misc, Window 
 const Tab = createBottomTabNavigator()
 
 export const TabNav = () => {
+	const isFocused = useIsFocused()
+
 	return (
 		<Tab.Navigator
 			initialRouteName='Screen1'

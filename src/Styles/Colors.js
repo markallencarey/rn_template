@@ -15,3 +15,5 @@ export const black = '#000000'
 export const white = '#FFFFFF'
 
 export const error = '#E54B4B'
+
+export const icons = '#C4C4C4'
